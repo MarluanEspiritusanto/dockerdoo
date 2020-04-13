@@ -1,100 +1,66 @@
 {
-	"name": "Python 3 & PostgreSQL",
-	"dockerComposeFile": [
-		"../docker-compose.yml",
-		"dev-vscode.yml"
-	],
-	"service": "odoo",
-	"remoteUser": "odoo",
-	"shutdownAction": "stopCompose",
-	"postCreateCommand": "sudo apt update && sudo apt install -y ssh && sudo pip install --no-cache-dir --upgrade --pre git+https://github.com/oca/pylint-odoo.git black flake8 inotify ptvsd",
+  "name": "Odoo Development",
+  "dockerComposeFile": ["../docker-compose.yml", "dev-vscode.yml"],
+  "service": "odoo",
+  "remoteUser": "odoo",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "sudo apt update && sudo apt install -y ssh && sudo pip install --no-cache-dir --upgrade --pre git+https://github.com/oca/pylint-odoo.git black flake8 inotify ptvsd",
 
-	"workspaceFolder": "/mnt/extra-addons",
+  "workspaceFolder": "/mnt/extra-addons",
 
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
 
-		"python.pythonPath": "/usr/local/bin/python",
-		"python.autoComplete.addBrackets": true,
-		"python.autoComplete.extraPaths": [
-			"/opt/odoo/addons",
-			"/opt/odoo",
-			"/opt/odoo/odoo/addons",
-			"/opt/enterprise",
-			"/mnt/extra-addons"
-		],
-		"python.linting.enabled": true,
-		"python.linting.pylintEnabled": true,
-		"python.linting.ignorePatterns": [
-			"/opt/odoo"
-		],
-		"python.linting.pylintArgs": [
-			"--rcfile", "${workspaceFolder}/.vscode/oca_pylint.cfg",
-			"--load-plugins", "pylint_odoo"
-			
-		],
-		"python.linting.flake8Enabled": true,
-		"python.linting.flake8Args": [
-			"--config", "${workspaceFolder}/.vscode/travis_run_flake8.cfg"
-		],
-		"python.formatting.provider": "black",
-		"python.formatting.blackArgs": [
-			"--skip-string-normalization"
-		],
+    "python.pythonPath": "/usr/local/bin/python",
+    "python.autoComplete.addBrackets": true,
+    "python.autoComplete.extraPaths": ["/opt/odoo/addons", "/opt/odoo", "/opt/odoo/odoo/addons", "/opt/enterprise", "/mnt/extra-addons"],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.ignorePatterns": ["/opt/odoo"],
+    "python.linting.pylintArgs": ["--rcfile", "${workspaceFolder}/.vscode/oca_pylint.cfg", "--load-plugins", "pylint_odoo"],
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": ["--config", "${workspaceFolder}/.vscode/travis_run_flake8.cfg"],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["--skip-string-normalization"],
+    "editor.fontSize": 16,
+    "editor.formatOnType": true,
+    "files.eol": "\n",
+    "files.exclude": {
+      "**/*.cache": true,
+      "**/*.idea": true,
+      "**/*.pyc": true,
+      "**/*__pycache__": true,
+      "**/.DS_Store": true,
+      "**/.git": true,
+      "**/.hg": true,
+      "**/.svn": true,
+      "**/CVS": true
+    },
+    "files.watcherExclude": {
+      "**/.git/objects/**": true,
+      "**/.git/subtree-cache/**": true,
+      "**/node_modules/*/**": true,
+      "**/.git/*/**": true
+    },
 
-		"window.zoomLevel": -0.5,
-		"editor.fontSize": 16,
-		"editor.formatOnType": true,
-		"files.eol": "\n",
-		"files.exclude": {
-			"**/*.cache": true,
-			"**/*.idea": true,
-			"**/*.pyc": true,
-			"**/*__pycache__": true,
-			"**/.DS_Store": true,
-			"**/.git": true,
-			"**/.hg": true,
-			"**/.svn": true,
-			"**/CVS": true
-		},
-		"files.watcherExclude": {
-			"**/.git/objects/**": true,
-			"**/.git/subtree-cache/**": true,
-			"**/node_modules/*/**": true,
-			"**/.git/*/**": true
-		},
+    "workbench.colorTheme": "Ayu One",
+    "workbench.iconTheme": "material-icon-theme",
+    "xmlTools.enforcePrettySelfClosingTagOnFormat": true,
+    "xmlTools.enableXmlTreeViewCursorSync": true,
+    "git.autofetch": true
+  },
 
-		"workbench.colorTheme": "Monokai Dark Soda",
-		"workbench.iconTheme": "vscode-icons",
-		"workbench.colorCustomizations": {
-			"activityBarBadge.background": "#388E3C",
-			"editorSuggestWidget.highlightForeground": "#388E3C",
-			"list.activeSelectionForeground": "#388E3C",
-			"list.highlightForeground": "#388E3C",
-			"list.inactiveSelectionForeground": "#388E3C",
-			"pickerGroup.foreground": "#388E3C",
-			"progressBar.background": "#388E3C",
-			"scrollbarSlider.activeBackground": "#388E3C50",
-			"tab.activeBorder": "#388E3C",
-			"textLink.foreground": "#388E3C"
-		},
-
-		"xmlTools.enforcePrettySelfClosingTagOnFormat": true,
-		"xmlTools.enableXmlTreeViewCursorSync": true,
-		"git.autofetch": true
-	},
-
-	"extensions": [
-		"aaron-bond.better-comments",
-		"AdamCaviness.theme-monokai-dark-soda",
-		"dbaeumer.vscode-eslint",
-		"DotJoshJohnson.xml",
-		"eamodio.gitlens",
-		"magicstack.magicpython",
-		"ms-python.python",
-		"ms-azuretools.vscode-docker",
-		"mstuttgart.odoo-snippets",
-		"vscode-icons-team.vscode-icons",
-		"visualstudioexptteam.vscodeintellicode"
-	]
+  "extensions": [
+    "aaron-bond.better-comments",
+    "ccy.ayu-adaptive",
+    "dbaeumer.vscode-eslint",
+    "DotJoshJohnson.xml",
+    "eamodio.gitlens",
+    "magicstack.magicpython",
+    "ms-python.python",
+    "ms-azuretools.vscode-docker",
+    "mstuttgart.odoo-snippets",
+    "PKief.material-icon-theme",
+    "visualstudioexptteam.vscodeintellicode"
+  ]
 }
