@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "DEV_",
+            "dialect": "PostgreSQL",
+            "name": "Dockerdoo",
+            "password": "odoo",
+            "port": 5432,
+            "server": "db",
+            "username": "odoo"
+        }
+    ]
+}
