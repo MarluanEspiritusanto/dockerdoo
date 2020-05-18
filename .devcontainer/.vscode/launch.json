@@ -12,6 +12,8 @@
             "args": [
                 "--config=/etc/odoo/odoo.conf",
                 "--log-level=info",
+                "-u",
+                "sale_mrp_fulfillment_workflow,cm_fulfillment_publication"
             ],
         },
         {
@@ -38,8 +40,10 @@
             "args": [
                 "--config=/etc/odoo/odoo.conf",
                 "--log-level=info",
-                "-d", "",
-                "-u", "",
+                "-d",
+                "",
+                "-u",
+                "",
             ],
         },
         {
@@ -53,8 +57,10 @@
                 "--config=/etc/odoo/odoo.conf",
                 "--log-level=info",
                 "--test-enable",
-                "-d", "",
-                "-i", "",
+                "-d",
+                "",
+                "-i",
+                "",
             ],
         },
     ]
