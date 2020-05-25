@@ -13,7 +13,7 @@
                 "--config=/etc/odoo/odoo.conf",
                 "--log-level=info",
                 "-u",
-                "sale_mrp_fulfillment_workflow,cm_fulfillment_publication"
+                "sale_mrp_fulfillment_workflow,cm_fulfillment_publication,cm_fulfillment_publication"
             ],
         },
         {
